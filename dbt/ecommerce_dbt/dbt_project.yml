@@ -34,3 +34,11 @@ models:
     # Config indicated by + and applies to all files under models/example/
     example:
       +materialized: view
+    
+    curated:
+      +schema: curated
+      +materialized: table
+
+    serving:
+      +schema: serving
+      +materialized: table
