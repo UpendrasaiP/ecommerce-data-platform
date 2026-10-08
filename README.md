@@ -1,45 +1,51 @@
 # E-Commerce Data Platform
 
-End-to-end real-world Data Engineering project built using AWS and modern data engineering tools.
+End-to-end real-world Data Engineering project built using Databricks and modern data engineering tools.
 
 ## Tech Stack
 
 - Git & GitHub
-- Amazon S3
-- AWS Glue
+- Databricks
+- Unity Catalog
 - PySpark
 - dbt
 - Apache Airflow
-- SageMaker Unified Studio
 - Datadog
-- Terraform
 
 ## Architecture
 
-Source Data
+Source Layer
     ↓
-Amazon S3 - Raw
+Databricks + Unity Catalog
     ↓
-AWS Glue + PySpark
+Curated Layer
     ↓
-Amazon S3 - Silver
+dbt Transformations
     ↓
-dbt
-    ↓
-Amazon S3 - Gold
+Serving Layer
     ↓
 Airflow Orchestration
-    ↓
-SageMaker Unified Studio
 
 Datadog → Monitoring & Alerting
 
+## Data Layers
+
+### Source Layer
+Raw source data ingested into Databricks-managed storage and governed through Unity Catalog.
+
+### Curated Layer
+Cleaned, standardized, deduplicated and validated data.
+
+### Serving Layer
+Business-ready data models optimized for analytics and reporting.
+
 ## Project Goals
 
-- Build an end-to-end data pipeline
+- Build an end-to-end Data Engineering pipeline
 - Implement incremental data ingestion
-- Perform PySpark-based transformations
+- Perform PySpark-based transformations in Databricks
+- Manage data using Unity Catalog
 - Build analytics-ready data models using dbt
-- Orchestrate pipelines using Airflow
+- Implement dbt tests and data quality checks
+- Orchestrate pipelines using Apache Airflow
 - Monitor DAGs and pipeline health using Datadog
-- Perform analytics and ML workflows using SageMaker
