@@ -1,1 +1,17 @@
-dbt/logs/
+# Airflow secrets and local configuration
+airflow/.env
+
+# Airflow runtime files
+airflow/logs/
+airflow/config/
+
+# Project runtime logs
+logs/
+
+# Python
+__pycache__/
+*.pyc
+
+# Local virtual environments
+.venv/
+venv/
